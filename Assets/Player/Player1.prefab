@@ -174,7 +174,11 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+<<<<<<< HEAD
 --- !u!114 &3387740652133410618
+=======
+--- !u!114 &6070379389539871229
+>>>>>>> 3e9733ba8e9d918bb91a00f9973acd616f50068c
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
