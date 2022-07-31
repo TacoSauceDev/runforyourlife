@@ -72,7 +72,10 @@ public class PlayerMovement : NetworkBehaviour
 
     void OnCollisionExit2D(Collision2D collision)
     {
-        isGrounded = false;
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = false;
+        }
     }
 
     void Flip(){

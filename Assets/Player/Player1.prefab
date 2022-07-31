@@ -102,9 +102,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb254a3dd89dc124fa8a51aee1af1172, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 5
   animator: {fileID: 2923749771811389141}
-  jumpForce: 5
+  jumpForce: 3
   isGrounded: 0
 --- !u!95 &2923749771811389141
 Animator:
