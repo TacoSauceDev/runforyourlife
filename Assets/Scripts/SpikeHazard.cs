@@ -7,6 +7,7 @@ public class SpikeHazard : MonoBehaviour
     //This is the amount of damage the hazard does
     public int damage;
 
+
   
     //This function will be called when another object bumps
     //into the one this script is attached to
@@ -26,8 +27,10 @@ public class SpikeHazard : MonoBehaviour
             //Which means this object is indeed a player
             //Therefore perform our action
             player.ModHealth(-damage);
-            
 
         }
+    
     }
+
+
 }

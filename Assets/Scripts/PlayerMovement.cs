@@ -12,6 +12,7 @@ public class PlayerMovement : NetworkBehaviour
     public float jumpForce = 5;
     public bool isGrounded;
     bool facingRight = true;
+    public bool isBouncing;
 
     // Start is called before the first frame update
     void Start()
@@ -68,11 +69,25 @@ public class PlayerMovement : NetworkBehaviour
         {
             isGrounded = true;
         }
+        //Added a new tag "Spike" so that if a player hits a spike, they bounce back
+        if (collision.gameObject.CompareTag("Spike"))
+        {
+            float bounce = 1000f;
+            rb.AddForce(collision.contacts[0].normal * bounce);
+            isBouncing = true;
+            Invoke("StopBounce",0.3f);
+        }
     }
 
     void OnCollisionExit2D(Collision2D collision)
     {
         isGrounded = false;
+    }
+    
+    //This stops the bouncing after a player hits a spike
+        void StopBounce()
+    {
+        isBouncing = false;
     }
 
     void Flip(){
@@ -81,4 +96,6 @@ public class PlayerMovement : NetworkBehaviour
         gameObject.transform.localScale = currentScale;
         facingRight = !facingRight;
     }
+
+
 }
