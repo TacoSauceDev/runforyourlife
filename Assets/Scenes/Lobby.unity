@@ -1595,7 +1595,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -97, y: 165}
+  m_AnchoredPosition: {x: -114.2, y: 177.7}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1566932994
@@ -1620,8 +1620,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Player Lobby
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 30297c2872b674c4194aa9b7a6aa6698, type: 2}
-  m_sharedMaterial: {fileID: 8304218322469500431, guid: 30297c2872b674c4194aa9b7a6aa6698, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 47786c06851ec5841a35f57daa288ad6, type: 2}
+  m_sharedMaterial: {fileID: 6876566014014968841, guid: 47786c06851ec5841a35f57daa288ad6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1645,8 +1645,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 72
+  m_fontSizeBase: 72
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1979,8 +1979,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Enter Join Code
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 249f8909533b9e34eb45d95f782773cf, type: 2}
-  m_sharedMaterial: {fileID: 4304081116184653957, guid: 249f8909533b9e34eb45d95f782773cf, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 30297c2872b674c4194aa9b7a6aa6698, type: 2}
+  m_sharedMaterial: {fileID: 8304218322469500431, guid: 30297c2872b674c4194aa9b7a6aa6698, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2004,8 +2004,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 22
-  m_fontSizeBase: 22
+  m_fontSize: 14
+  m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
