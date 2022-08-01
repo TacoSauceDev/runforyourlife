@@ -53,15 +53,40 @@ public class Tether : MonoBehaviour
         firstSegment.posNew += velocity;
         firstSegment.posNew += forceGravity * Time.deltaTime;
         this.ropeSegments[i] = firstSegment;
+        }
+      /* Keep moving player in place
+        float playerDistance = (left.transform.position-right.transform.position).magnitude;
+        if(Mathf.Abs(playerDistance) > (float)segmentLength){
+                if(playerDistance < 0){
+                    left.transform.position = this.ropeSegments[0].posNew;
+                }
+                else{
+                    right.transform.position = this.ropeSegments[this.ropeSegments.Count -1].posNew;
+                }
+        }
+*/
 
+        float playerDistance = (left.transform.position-right.transform.position).magnitude;
+        if(Mathf.Abs(playerDistance) > (float)segmentLength){
+            Vector2 left2 = new Vector2(left.transform.position.x,left.transform.position.y);
+            Vector2 right2 = new Vector2(right.transform.position.x,right.transform.position.y);
+            if(left2 == ropeSegments[0].posOld){
+         
+                left.GetComponent<Rigidbody2D>().AddForce(right.GetComponent<Rigidbody2D>().velocity,ForceMode2D.Impulse);
+            }
+            else{
+                right.GetComponent<Rigidbody2D>().AddForce(left.GetComponent<Rigidbody2D>().velocity, ForceMode2D.Impulse);
+            }
         }
 
         //constraints
         for (int i =0;  i <50; i++){
             ApplyConstraints();
+            col.points = this.ropeSegments.Select(s  => s.posNew).ToArray();
         }
-
-        col.points = this.ropeSegments.Select(s  => s.posNew).ToArray();
+        
+        
+        
     }
 
  
@@ -73,7 +98,7 @@ public class Tether : MonoBehaviour
         RopeSegment endSegment = this.ropeSegments [this.ropeSegments.Count-1];
         endSegment.posNew =  right.transform.position;
         this.ropeSegments[this.ropeSegments.Count - 1] = endSegment;
-
+        Vector2 ropeDir = Vector2.zero;
         for(int i =0; i < this.segmentLength - 1;i++){
             RopeSegment firstSeg= this.ropeSegments[i];
             RopeSegment secondSeg= this.ropeSegments[i+1];
@@ -88,7 +113,9 @@ public class Tether : MonoBehaviour
             else if (dist < ropeSegLen){
                 changeDir = (secondSeg.posNew - firstSeg.posNew).normalized;
             }
+            ropeDir += changeDir;
             Vector2 changeAmount =  changeDir * error;
+
             if (i != 0){
                 firstSeg.posNew -= changeAmount * .5f;
                 this.ropeSegments[i] = firstSeg;
@@ -99,6 +126,7 @@ public class Tether : MonoBehaviour
                 secondSeg.posNew += changeAmount;
                 this.ropeSegments[i + 1] =secondSeg;
             }
+           
         }
     }
 

@@ -14,7 +14,7 @@ public class CameraFollow : MonoBehaviour
     //public Tether tether;
 
 	// Use this for initialization
-	void Awake ()
+	void Start ()
     {
         _cam = GetComponent<Camera>();
 	}
