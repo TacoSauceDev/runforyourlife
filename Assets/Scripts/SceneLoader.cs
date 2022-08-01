@@ -13,7 +13,7 @@ public class SceneLoader : MonoBehaviour
 
     public void NewGame(){
         Debug.Log("Loading Scene!");
-        SceneManager.LoadScene("Multiplayer", LoadSceneMode.Single);
+        SceneManager.LoadScene("Lobby", LoadSceneMode.Single);
     }
 
     public void Options(){
