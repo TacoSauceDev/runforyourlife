@@ -6,18 +6,19 @@ TagManager:
   tags:
   - Ground
   - Spike
+  - Background
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Background
   - Water
   - UI
   - Tether
   - Player
-  - 
-  - 
-  - 
+  - AI
+  - Hazard
+  - Ground
   - 
   - 
   - 
@@ -43,12 +44,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: New Layer 1
+  - name: Background
     uniqueID: 1724632059
     locked: 0
-  - name: New Layer 2
+  - name: Ground
     uniqueID: 1181753237
     locked: 0
-  - name: New Layer 3
+  - name: Player
     uniqueID: 4163562339
     locked: 0
