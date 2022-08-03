@@ -9,7 +9,7 @@ public class Tether : MonoBehaviour
     private float ropeSegLen = .25f;
     private int segmentLength = 35;
     private float lineWidth = .1f;
-   
+    private float friction = .3f;
     private LineRenderer lineRenderer;
     private void Start() {
         Vector2 startPoint = left.transform.position;
@@ -30,6 +30,9 @@ public class Tether : MonoBehaviour
         Simulate();
     }
     void DrawRope(){
+        if(left == null || right == null){
+            return;
+        }
         float lineWidth = this.lineWidth;
         lineRenderer.startWidth = lineWidth;
         lineRenderer.endWidth = lineWidth;
@@ -44,6 +47,9 @@ public class Tether : MonoBehaviour
 
     
     void Simulate(){
+         if(left == null || right == null){
+            return;
+        }
         //simulation
         Vector2 forceGravity = new Vector2(0f,-1f);
         for(int i =0; i < this.segmentLength; i++){
@@ -70,13 +76,24 @@ public class Tether : MonoBehaviour
         if(Mathf.Abs(playerDistance) > (float)segmentLength){
             Vector2 left2 = new Vector2(left.transform.position.x,left.transform.position.y);
             Vector2 right2 = new Vector2(right.transform.position.x,right.transform.position.y);
-            if(left2 == ropeSegments[0].posOld){
-         
-                left.GetComponent<Rigidbody2D>().AddForce(right.GetComponent<Rigidbody2D>().velocity,ForceMode2D.Impulse);
+            Rigidbody2D leftBody= left.GetComponent<Rigidbody2D>();
+            Rigidbody2D rightBody= right.GetComponent<Rigidbody2D>();
+
+            if(leftBody.mass < rightBody.mass || Mathf.Abs(leftBody.velocity.magnitude) < Mathf.Abs(rightBody.velocity.magnitude)){
+                if(isGrounded(left)){
+                    leftBody.AddForce(rightBody.velocity * friction * rightBody.mass,ForceMode2D.Impulse);
+                }
+                rightBody.velocity *=  friction * rightBody.mass;
+
             }
-            else{
-                right.GetComponent<Rigidbody2D>().AddForce(left.GetComponent<Rigidbody2D>().velocity, ForceMode2D.Impulse);
+            else if (leftBody.mass > rightBody.mass || Mathf.Abs(leftBody.velocity.magnitude) > Mathf.Abs(rightBody.velocity.magnitude)){
+                if(isGrounded(right)){
+                    rightBody.AddForce(leftBody.velocity * friction * leftBody.mass, ForceMode2D.Impulse);
+
+                }
+                leftBody.velocity *=  friction * leftBody.mass;
             }
+            
         }
 
         //constraints
@@ -89,7 +106,11 @@ public class Tether : MonoBehaviour
         
     }
 
- 
+    //Player should be controlling this
+    private bool isGrounded(GameObject obj){
+        float distToGround = obj.GetComponent<Collider2D>().bounds.extents.y;
+        return Physics2D.Raycast(obj.transform.position, -Vector2.up,distToGround + .1f);
+    }
     private void ApplyConstraints(){
         RopeSegment firstSegment=  this.ropeSegments[0];
         firstSegment.posNew = left.transform.position;
