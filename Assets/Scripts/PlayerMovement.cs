@@ -13,6 +13,8 @@ public class PlayerMovement : NetworkBehaviour
     public bool isGrounded;
     bool facingRight = true;
     public bool isBouncing;
+    bool onWall = false;
+    bool wallJump = false;
 
     // Start is called before the first frame update
     void Start()
@@ -61,6 +63,14 @@ public class PlayerMovement : NetworkBehaviour
         if(rb.velocity.x < 0 && facingRight){
             Flip();
         }
+        if(onWall && Input.GetKey(KeyCode.W))
+        {
+            wallJump = true;
+            Invoke("SetWallJumpFalse", (float)0.1);
+        }
+        if(wallJump){
+            rb.velocity = new Vector2((rb.velocity.x * -1),jumpForce);
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -68,6 +78,12 @@ public class PlayerMovement : NetworkBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
+        }
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            onWall = true;
+            isGrounded = false;
+            Physics.gravity = new Vector3(0,0,0);
         }
         //Added a new tag "Spike" so that if a player hits a spike, they bounce back
         if (collision.gameObject.CompareTag("Spike"))
@@ -87,6 +103,12 @@ public class PlayerMovement : NetworkBehaviour
         {
             isGrounded = false;
         }
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            onWall = false;
+            isGrounded = true;
+            Physics.gravity = new Vector3(0,-9.8f,0);
+        }
     }
     
     //This stops the bouncing after a player hits a spike
@@ -102,5 +124,7 @@ public class PlayerMovement : NetworkBehaviour
         facingRight = !facingRight;
     }
 
-
+    void SetWallJumpFalse(){
+        wallJump = false;
+    }
 }
