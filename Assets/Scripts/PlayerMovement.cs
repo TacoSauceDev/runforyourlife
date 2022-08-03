@@ -88,10 +88,12 @@ public class PlayerMovement : NetworkBehaviour
         //Added a new tag "Spike" so that if a player hits a spike, they bounce back
         if (collision.gameObject.CompareTag("Spike"))
         {
-            float bounce = 1000f;
-            rb.AddForce(collision.contacts[0].normal * bounce);
-            isBouncing = true;
-            Invoke("StopBounce",0.3f);
+            if (isGrounded == true)
+              {  float bounce = 1000f;
+                rb.AddForce(collision.contacts[0].normal * bounce);
+                isBouncing = true;
+                Invoke("StopBounce",0.3f);
+              }
         }
     }
 

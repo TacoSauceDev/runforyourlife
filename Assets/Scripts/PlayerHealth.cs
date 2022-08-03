@@ -37,6 +37,7 @@ public class PlayerHealth : MonoBehaviour
    public void Kill()
    {
         // This will destroy the game object that this script is attached to
+
         Destroy(gameObject);
    }
 
