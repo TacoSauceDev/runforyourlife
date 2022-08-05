@@ -4,42 +4,55 @@ using UnityEngine;
 
 public class AIController : MonoBehaviour
 {
-    public Transform player; //the player object
-    public float minDistance;
-    public float maxDistance;
-    public float speed;
-    public Rigidbody rb;
-    private CapsuleCollider collide;
+    public GameObject player; //the player object
+    private Transform playerPosition;
+    private Vector2 currentPostion;
+    public float distance;
+    public float speedEnemy;
+    public PlayerHealth playerhealth;
+    public Animator aiAnimator;
+    public int enemyDamage;
 
     // Start is called before the first frame update
     void Start()
     {
         // Use this for initialization
-        collide = GetComponent<CapsuleCollider>();
+        playerPosition = player.GetComponent<Transform>();
+        currentPostion = GetComponent<Transform>().position;
+        aiAnimator = GetComponent<Animator>();
+        playerhealth = GetComponent<PlayerHealth>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Vector3.Distance(player.position, this.transform.position) < maxDistance)
+        if( Vector2.Distance(transform.position, playerPosition.position) < distance )
         {
-            //this will allow the AI to turn, we may want to change this, but for now I will leave
-            //it until we know what we want our AI to do EXACTLY. Like do we want it to chase around the level
-            //if it is too close no matter what direction or do we want it to just go in a straight line?
-            Vector3 face = (player.position - this.transform.position) * Time.deltaTime * speed;
-            this.transform.rotation = Quaternion.Slerp(this.transform.rotation, Quaternion.LookRotation(face), 0.1f);
-                     
-
-            if(face.magnitude > minDistance)
+            transform.position = Vector2.MoveTowards(transform.position, playerPosition.position, speedEnemy * Time.deltaTime);
+            //aiAnimator.setBool("run", true);
+        }
+        else
+        {
+            if( Vector2.Distance(transform.position, currentPostion) <= 0 )
             {
-                this.transform.Translate(0, 0, 0.5f);
+                //aiAnimator.setBool("run", false);
             }
-
+            else
+            {
+                transform.position = Vector2.MoveTowards(transform.position, currentPostion, speedEnemy * Time.deltaTime);
+            }
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollision2DEnter(BoxCollider2D collision)
     {
-        rb.velocity = Vector3.zero;
+        BoxCollider2D enemyAttack = collision.GetComponent<BoxCollider2D>();
+        PlayerHealth player = enemyAttack.GetComponent<PlayerHealth>();
+
+        if(player != null)
+        {
+            playerhealth.ModHealth(-enemyDamage);
+        }
     }
 }
