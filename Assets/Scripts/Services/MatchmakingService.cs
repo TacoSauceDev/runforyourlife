@@ -48,7 +48,11 @@ public static class MatchmakingService {
         var a = await RelayService.Instance.CreateAllocationAsync(maxPlayers);
         var joinCode = await RelayService.Instance.GetJoinCodeAsync(a.AllocationId);
         
-        CreateLobbyOptions options = new CreateLobbyOptions();
+        var options = new CreateLobbyOptions {
+            Data = new Dictionary<string, DataObject> {
+                { Constants.JoinKey, new DataObject(DataObject.VisibilityOptions.Member, joinCode) }
+            }
+        };
         options.IsPrivate = true;
         // Create a lobby, adding the relay join code to the lobby data
         string lobbyName = "new lobby";
