@@ -1,6 +1,7 @@
 using UnityEngine;
+using Unity.Netcode;
 
-public class CharacterController : MonoBehaviour
+public class CharacterController : NetworkBehaviour
 {
     Rigidbody2D _rb;
    
