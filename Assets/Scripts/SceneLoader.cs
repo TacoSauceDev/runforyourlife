@@ -12,17 +12,17 @@ using Unity.Netcode.Transports.UTP;
 using Unity.Netcode;
 public class SceneLoader : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI _joinCode; // Join Code the player types in
+    [SerializeField] private TMP_InputField _joinCode; // Join Code the player types in
     [SerializeField] private TextMeshProUGUI _lobbyCode; // Lobby Code that the player gives for others to enter into join code field.
     [SerializeField] private GameObject _createGamePanel;
 
     public async void JoinGame(){
-        Debug.Log("JoinCode: " + _joinCode.text);
+        string temp_join_code = _joinCode.text;
+        Debug.Log("JoinCode: " + temp_join_code);
         try
         {   
-            
-            await MatchmakingService.JoinLobbyWithAllocation(_joinCode.text);
-            NetworkManager.Singleton.StartClient();
+            await MatchmakingService.JoinLobbyWithAllocation(temp_join_code);
+            //NetworkManager.Singleton.StartClient();
         }
         catch (LobbyServiceException e)
         {
@@ -39,7 +39,10 @@ public class SceneLoader : MonoBehaviour
         _createGamePanel.SetActive(true);
         
 
-    }   
+    }
+    public void CloseMatchmaking(){
+        _createGamePanel.SetActive(false);
+    }
     public void ExitGame(){
         Application.Quit();
         Debug.Log("Quitting!");

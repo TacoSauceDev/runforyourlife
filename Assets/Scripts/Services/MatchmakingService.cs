@@ -78,6 +78,8 @@ public static class MatchmakingService {
     }
 
     public static async Task JoinLobbyWithAllocation(string lobbyId) {
+        Debug.Log("Inside method Matchmaking.JoinLobbyWithAllocation");
+        Debug.Log("JoinCode: " + lobbyId);
         _currentLobby = await Lobbies.Instance.JoinLobbyByCodeAsync(lobbyId);
         var a = await RelayService.Instance.JoinAllocationAsync(_currentLobby.Data[Constants.JoinKey].Value);
 
