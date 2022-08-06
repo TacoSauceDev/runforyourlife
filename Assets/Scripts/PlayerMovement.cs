@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerMovement : NetworkBehaviour
 {
     Rigidbody2D rb;
-    public float speed = 2;
+    public float speed = 1.5f;
     public Animator animator;
 
     public float jumpForce = 5;
@@ -66,7 +66,7 @@ public class PlayerMovement : NetworkBehaviour
         if(onWall && Input.GetKey(KeyCode.W))
         {
             wallJump = true;
-            Invoke("SetWallJumpFalse", (float)0.1);
+            Invoke("SetWallJumpFalse", (float)0.08);
         }
         if(wallJump){
             rb.velocity = new Vector2((rb.velocity.x * -1),jumpForce);
