@@ -30,9 +30,9 @@ public class PlayerHealth : MonoBehaviour
       currentHealth += changeHealth;
       //keep our current health between zero and starting value
       currentHealth = Mathf.Clamp(currentHealth,0,beginningHealth);
-
       healthBar.SetHealth(currentHealth);
-    
+      //Debug.Log("Player's Health is " + currentHealth);
+
       // If health drops to zero, that means the player is dead, colder than a well diggers ass
       if(currentHealth == 0)
       {
