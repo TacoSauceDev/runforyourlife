@@ -72,7 +72,7 @@ public class SceneLoader : MonoBehaviour
     }
     public async void StartGame(){
         await MatchmakingService.LockLobby();
-        NetworkManager.Singleton.SceneManager.LoadScene("Playertestscene", LoadSceneMode.Single);
+        NetworkManager.Singleton.SceneManager.LoadScene("Level2", LoadSceneMode.Single);
     }
 
     void Update(){
