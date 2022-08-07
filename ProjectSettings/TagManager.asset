@@ -8,6 +8,7 @@ TagManager:
   - Spike
   - Wall
   - Background
+  - DeathBox
   layers:
   - Default
   - TransparentFX
