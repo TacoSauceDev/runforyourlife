@@ -10,10 +10,10 @@ public class Tether : NetworkBehaviour
     public GameObject left, right;
     private List<RopeSegment> ropeSegments = new List<RopeSegment>();
     private EdgeCollider2D col;
-    private float ropeSegLen = .25f;
-    private int segmentLength = 35;
-    private float lineWidth = .1f;
-    private float friction = .3f;
+    public float ropeSegLen = .25f;
+    public int segmentLength = 5;
+    public float lineWidth = .05f;
+    public float friction = .3f;
     private LineRenderer lineRenderer;
     private void Start() {
   
@@ -36,7 +36,7 @@ public class Tether : NetworkBehaviour
             right = players[1];
             init();
         }
-        
+
         this.DrawRope();
     }
      void FixedUpdate()
