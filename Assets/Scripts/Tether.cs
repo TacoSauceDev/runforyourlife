@@ -1,17 +1,26 @@
+using System.Runtime.CompilerServices;
+using System.Globalization;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Netcode;
 using System.Linq;
-public class Tether : MonoBehaviour
+public class Tether : NetworkBehaviour
 {
     public GameObject left, right;
     private List<RopeSegment> ropeSegments = new List<RopeSegment>();
     private EdgeCollider2D col;
-    private float ropeSegLen = .25f;
-    private int segmentLength = 35;
-    private float lineWidth = .1f;
-    private float friction = .3f;
+    public float ropeSegLen = .25f;
+    public int segmentLength = 5;
+    public float lineWidth = .05f;
+    public float friction = .3f;
     private LineRenderer lineRenderer;
     private void Start() {
+  
+
+    }
+
+    void init(){
         Vector2 startPoint = left.transform.position;
         this.lineRenderer = this.GetComponent<LineRenderer>();
         this.col =  GetComponent<EdgeCollider2D>();
@@ -19,10 +28,15 @@ public class Tether : MonoBehaviour
             this.ropeSegments.Add(new RopeSegment(startPoint));
             startPoint.y -= ropeSegLen;
         }
-
     }
-
     void Update(){
+        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+        if(players.Count() == 2 && (left == null && right == null)){
+            left = players[0];
+            right = players[1];
+            init();
+        }
+
         this.DrawRope();
     }
      void FixedUpdate()
@@ -50,6 +64,7 @@ public class Tether : MonoBehaviour
          if(left == null || right == null){
             return;
         }
+    
         //simulation
         Vector2 forceGravity = new Vector2(0f,-1f);
         for(int i =0; i < this.segmentLength; i++){
@@ -71,30 +86,7 @@ public class Tether : MonoBehaviour
                 }
         }
 */
-
-        float playerDistance = (left.transform.position-right.transform.position).magnitude;
-        if(Mathf.Abs(playerDistance) > (float)segmentLength){
-            Vector2 left2 = new Vector2(left.transform.position.x,left.transform.position.y);
-            Vector2 right2 = new Vector2(right.transform.position.x,right.transform.position.y);
-            Rigidbody2D leftBody= left.GetComponent<Rigidbody2D>();
-            Rigidbody2D rightBody= right.GetComponent<Rigidbody2D>();
-
-            if(leftBody.mass < rightBody.mass || Mathf.Abs(leftBody.velocity.magnitude) < Mathf.Abs(rightBody.velocity.magnitude)){
-                if(isGrounded(left)){
-                    leftBody.AddForce(rightBody.velocity * friction * rightBody.mass,ForceMode2D.Impulse);
-                }
-                rightBody.velocity *=  friction * rightBody.mass;
-
-            }
-            else if (leftBody.mass > rightBody.mass || Mathf.Abs(leftBody.velocity.magnitude) > Mathf.Abs(rightBody.velocity.magnitude)){
-                if(isGrounded(right)){
-                    rightBody.AddForce(leftBody.velocity * friction * leftBody.mass, ForceMode2D.Impulse);
-
-                }
-                leftBody.velocity *=  friction * leftBody.mass;
-            }
-            
-        }
+     
 
         //constraints
         for (int i =0;  i <50; i++){
@@ -102,7 +94,39 @@ public class Tether : MonoBehaviour
             col.points = this.ropeSegments.Select(s  => s.posNew).ToArray();
         }
         
-        
+           if(left.transform.position.x > right.transform.position.x){
+            GameObject temp = left;
+            left = right;
+            right = temp;
+        }
+        float playerDistance = (left.transform.position-right.transform.position).magnitude;
+        if(Mathf.Abs(playerDistance) > (float)segmentLength){
+            Vector2 left2 = new Vector2(left.transform.position.x,left.transform.position.y);
+            Vector2 right2 = new Vector2(right.transform.position.x,right.transform.position.y);
+            Rigidbody2D leftBody= left.GetComponent<Rigidbody2D>();
+            Rigidbody2D rightBody= right.GetComponent<Rigidbody2D>();
+
+            if(Mathf.Abs(leftBody.velocity.magnitude) < Mathf.Abs(rightBody.velocity.magnitude)){
+                if(isGrounded(left)){
+                    leftBody.AddForce(-rightBody.velocity * friction * rightBody.mass,ForceMode2D.Impulse);
+                }
+                rightBody.velocity *=  friction * rightBody.mass;
+
+            }
+            else if (Mathf.Abs(leftBody.velocity.magnitude) > Mathf.Abs(rightBody.velocity.magnitude)){
+                if(isGrounded(right)){
+                    rightBody.AddForce(-leftBody.velocity * friction * leftBody.mass, ForceMode2D.Impulse);
+
+                }
+                leftBody.velocity *=  friction * leftBody.mass;
+            }
+            else{
+                Vector3 midPoint  = ropeSegments[ropeSegments.Count()/2].posNew;
+                leftBody.AddForce(  ( midPoint - left.transform.position).normalized  * 4, ForceMode2D.Impulse);
+                rightBody.AddForce((midPoint - right.transform.position).normalized *4, ForceMode2D.Impulse);           
+            }
+            
+        }
         
     }
 
