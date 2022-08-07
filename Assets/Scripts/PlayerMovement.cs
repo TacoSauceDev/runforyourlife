@@ -82,7 +82,7 @@ public class PlayerMovement : NetworkBehaviour
         if (collision.gameObject.CompareTag("Wall"))
         {
             onWall = true;
-            isGrounded = false;
+            isGrounded = true;
             Physics.gravity = new Vector3(0,0,0);
         }
         //Added a new tag "Spike" so that if a player hits a spike, they bounce back
@@ -106,7 +106,7 @@ public class PlayerMovement : NetworkBehaviour
         if (collision.gameObject.CompareTag("Wall"))
         {
             onWall = false;
-            isGrounded = true;
+            isGrounded = false;
             Physics.gravity = new Vector3(0,-9.8f,0);
         }
     }
