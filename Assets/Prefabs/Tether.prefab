@@ -73,9 +73,9 @@ LineRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1724632059
+  m_SortingLayer: 1
+  m_SortingOrder: 99
   m_Positions:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 1}
@@ -148,6 +148,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   left: {fileID: 0}
   right: {fileID: 0}
+  ropeSegLen: 0.25
+  segmentLength: 5
+  lineWidth: 0.05
+  friction: 0.3
 --- !u!68 &5027679044452161495
 EdgeCollider2D:
   m_ObjectHideFlags: 0

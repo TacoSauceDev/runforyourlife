@@ -685,6 +685,14 @@ PrefabInstance:
       propertyPath: GlobalObjectIdHash
       value: 2549423635
       objectReference: {fileID: 0}
+    - target: {fileID: 5027679044452161493, guid: 5c5900b7c7b83804083b6b3302f370c4, type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5027679044452161493, guid: 5c5900b7c7b83804083b6b3302f370c4, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -131404957
+      objectReference: {fileID: 0}
     - target: {fileID: 5027679044452161494, guid: 5c5900b7c7b83804083b6b3302f370c4, type: 3}
       propertyPath: m_RootOrder
       value: 1
