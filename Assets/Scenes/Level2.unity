@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 38321013}
   - component: {fileID: 38321012}
   - component: {fileID: 38321011}
+  - component: {fileID: 38321016}
   m_Layer: 0
   m_Name: spike5
   m_TagString: Spike
@@ -269,6 +270,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &38321016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 38321010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 2749892887
+  AlwaysReplicateAsRoot: 0
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1 &115173106
 GameObject:
   m_ObjectHideFlags: 0
@@ -282,6 +299,7 @@ GameObject:
   - component: {fileID: 115173107}
   - component: {fileID: 115173110}
   - component: {fileID: 115173111}
+  - component: {fileID: 115173112}
   m_Layer: 0
   m_Name: spike1
   m_TagString: Spike
@@ -415,6 +433,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 30
+--- !u!114 &115173112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 115173106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 2470675275
+  AlwaysReplicateAsRoot: 0
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1 &181451366
 GameObject:
   m_ObjectHideFlags: 0
@@ -428,6 +462,7 @@ GameObject:
   - component: {fileID: 181451369}
   - component: {fileID: 181451368}
   - component: {fileID: 181451367}
+  - component: {fileID: 181451372}
   m_Layer: 0
   m_Name: spike7
   m_TagString: Spike
@@ -561,6 +596,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &181451372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 181451366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 2593564502
+  AlwaysReplicateAsRoot: 0
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1 &221523313
 GameObject:
   m_ObjectHideFlags: 0
@@ -935,6 +986,7 @@ GameObject:
   - component: {fileID: 318667140}
   - component: {fileID: 318667139}
   - component: {fileID: 318667138}
+  - component: {fileID: 318667143}
   m_Layer: 0
   m_Name: spike4
   m_TagString: Spike
@@ -1068,6 +1120,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &318667143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 318667137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 1050160238
+  AlwaysReplicateAsRoot: 0
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!4 &345327861 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3727268319658687657, guid: 63aebdbc7d774474d886259cf3e3a3e7, type: 3}
@@ -1086,6 +1154,7 @@ GameObject:
   - component: {fileID: 356382359}
   - component: {fileID: 356382358}
   - component: {fileID: 356382357}
+  - component: {fileID: 356382362}
   m_Layer: 0
   m_Name: spike6
   m_TagString: Spike
@@ -1219,6 +1288,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &356382362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 356382356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 3946214894
+  AlwaysReplicateAsRoot: 0
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1 &362664161
 GameObject:
   m_ObjectHideFlags: 0
@@ -1373,6 +1458,7 @@ GameObject:
   - component: {fileID: 502460981}
   - component: {fileID: 502460980}
   - component: {fileID: 502460979}
+  - component: {fileID: 502460984}
   m_Layer: 0
   m_Name: spike2
   m_TagString: Spike
@@ -1506,6 +1592,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &502460984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 502460978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 3472578957
+  AlwaysReplicateAsRoot: 0
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1 &528526119
 GameObject:
   m_ObjectHideFlags: 0
@@ -1867,6 +1969,7 @@ GameObject:
   - component: {fileID: 697203224}
   - component: {fileID: 697203227}
   - component: {fileID: 697203228}
+  - component: {fileID: 697203229}
   m_Layer: 0
   m_Name: peppermint-button-up-right
   m_TagString: Wall
@@ -2001,6 +2104,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstacles:
   - {fileID: 115173106}
+--- !u!114 &697203229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 697203223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 350852440
+  AlwaysReplicateAsRoot: 0
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1 &704402683
 GameObject:
   m_ObjectHideFlags: 0
@@ -2013,6 +2132,7 @@ GameObject:
   - component: {fileID: 704402684}
   - component: {fileID: 704402686}
   - component: {fileID: 704402687}
+  - component: {fileID: 704402688}
   m_Layer: 0
   m_Name: peppermint-button-up
   m_TagString: Untagged
@@ -2127,6 +2247,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.05308446}
   m_EdgeRadius: 0
+--- !u!114 &704402688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 704402683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 834760724
+  AlwaysReplicateAsRoot: 0
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1001 &718598170
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2216,6 +2352,7 @@ GameObject:
   - component: {fileID: 814524883}
   - component: {fileID: 814524885}
   - component: {fileID: 814524886}
+  - component: {fileID: 814524887}
   m_Layer: 0
   m_Name: peppermint-button-up (3)
   m_TagString: Untagged
@@ -2332,6 +2469,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.1405608, y: 0.056324318}
   m_EdgeRadius: 0
+--- !u!114 &814524887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 814524882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 3799173484
+  AlwaysReplicateAsRoot: 0
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1001 &872711246
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2409,6 +2562,7 @@ GameObject:
   - component: {fileID: 1103855486}
   - component: {fileID: 1103855485}
   - component: {fileID: 1103855488}
+  - component: {fileID: 1103855489}
   m_Layer: 0
   m_Name: peppermint-button-up-right (1)
   m_TagString: Wall
@@ -2523,6 +2677,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstacles:
   - {fileID: 115173106}
+--- !u!114 &1103855489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1103855484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 2851776838
+  AlwaysReplicateAsRoot: 0
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1 &1121494425
 GameObject:
   m_ObjectHideFlags: 0
@@ -3351,6 +3521,7 @@ GameObject:
   - component: {fileID: 1736519249}
   - component: {fileID: 1736519248}
   - component: {fileID: 1736519247}
+  - component: {fileID: 1736519252}
   m_Layer: 0
   m_Name: spike3
   m_TagString: Spike
@@ -3484,6 +3655,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1736519252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1736519246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 939333354
+  AlwaysReplicateAsRoot: 0
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1 &1783922492
 GameObject:
   m_ObjectHideFlags: 0
@@ -3794,6 +3981,7 @@ GameObject:
   - component: {fileID: 2086873663}
   - component: {fileID: 2086873665}
   - component: {fileID: 2086873666}
+  - component: {fileID: 2086873667}
   m_Layer: 0
   m_Name: peppermint-button-up (1)
   m_TagString: Untagged
@@ -3908,6 +4096,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.052004497}
   m_EdgeRadius: 0
+--- !u!114 &2086873667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2086873662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 3932646671
+  AlwaysReplicateAsRoot: 0
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1 &2104455015
 GameObject:
   m_ObjectHideFlags: 0
@@ -3920,6 +4124,7 @@ GameObject:
   - component: {fileID: 2104455016}
   - component: {fileID: 2104455018}
   - component: {fileID: 2104455019}
+  - component: {fileID: 2104455020}
   m_Layer: 0
   m_Name: peppermint-button-up (2)
   m_TagString: Untagged
@@ -4036,6 +4241,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.14164066, y: 0.0574042}
   m_EdgeRadius: 0
+--- !u!114 &2104455020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2104455015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 3871541087
+  AlwaysReplicateAsRoot: 0
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1001 &2105001637
 PrefabInstance:
   m_ObjectHideFlags: 0
