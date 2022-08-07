@@ -1,7 +1,11 @@
+using System.Runtime.CompilerServices;
+using System.Globalization;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Netcode;
 using System.Linq;
-public class Tether : MonoBehaviour
+public class Tether : NetworkBehaviour
 {
     public GameObject left, right;
     private List<RopeSegment> ropeSegments = new List<RopeSegment>();
@@ -12,6 +16,9 @@ public class Tether : MonoBehaviour
     private float friction = .3f;
     private LineRenderer lineRenderer;
     private void Start() {
+        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+        left = players[0];
+        right = players[1];
         Vector2 startPoint = left.transform.position;
         this.lineRenderer = this.GetComponent<LineRenderer>();
         this.col =  GetComponent<EdgeCollider2D>();
