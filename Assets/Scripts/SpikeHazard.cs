@@ -27,6 +27,7 @@ public class SpikeHazard : MonoBehaviour
             //Which means this object is indeed a player
             //Therefore perform our action
             player.ModHealth(-damage);
+            
 
         }
     
