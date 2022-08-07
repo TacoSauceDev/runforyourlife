@@ -16,9 +16,11 @@ public class Tether : NetworkBehaviour
     private float friction = .3f;
     private LineRenderer lineRenderer;
     private void Start() {
-        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
-        left = players[0];
-        right = players[1];
+  
+
+    }
+
+    void init(){
         Vector2 startPoint = left.transform.position;
         this.lineRenderer = this.GetComponent<LineRenderer>();
         this.col =  GetComponent<EdgeCollider2D>();
@@ -26,10 +28,15 @@ public class Tether : NetworkBehaviour
             this.ropeSegments.Add(new RopeSegment(startPoint));
             startPoint.y -= ropeSegLen;
         }
-
     }
-
     void Update(){
+        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+        if(players.Count() == 2 && (left == null && right == null)){
+            left = players[0];
+            right = players[1];
+            init();
+        }
+        
         this.DrawRope();
     }
      void FixedUpdate()
