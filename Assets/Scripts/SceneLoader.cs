@@ -16,6 +16,8 @@ public class SceneLoader : MonoBehaviour
     [SerializeField] private TMP_InputField _joinCode; // Join Code the player types in
     [SerializeField] private TextMeshProUGUI _lobbyCode; // Lobby Code that the player gives for others to enter into join code field.
     [SerializeField] private GameObject _createGamePanel;
+    [SerializeField] private GameObject _exitGamePanel;
+
     public static event Action StartTheFreakingGame;
     private void Start() {
         StartTheFreakingGame += StartGame;
@@ -41,9 +43,12 @@ public class SceneLoader : MonoBehaviour
         
         _lobbyCode.SetText(MatchmakingService.GetLobbyId());
         _createGamePanel.SetActive(true);
-        
-
     }
+
+    public void ExitNo (){
+        _exitGamePanel.SetActive(false);
+    }
+    
     public async void CloseMatchmaking(){
         _createGamePanel.SetActive(false);
         await MatchmakingService.LeaveLobby();
@@ -68,5 +73,11 @@ public class SceneLoader : MonoBehaviour
     public async void StartGame(){
         await MatchmakingService.LockLobby();
         NetworkManager.Singleton.SceneManager.LoadScene("Playertestscene", LoadSceneMode.Single);
+    }
+
+    void Update(){
+        if(Input.GetKeyDown(KeyCode.Escape)){
+            _exitGamePanel.SetActive(true);
+        }
     }
 }
