@@ -371,7 +371,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &345327861 stripped
 Transform:
@@ -444,7 +444,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &626304982
 GameObject:
@@ -670,6 +670,67 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 603f729d38c1a264ca7077bcd890c523, type: 3}
+--- !u!1001 &979596249
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5027679044452161483, guid: 5c5900b7c7b83804083b6b3302f370c4, type: 3}
+      propertyPath: m_Name
+      value: Tether
+      objectReference: {fileID: 0}
+    - target: {fileID: 5027679044452161488, guid: 5c5900b7c7b83804083b6b3302f370c4, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2549423635
+      objectReference: {fileID: 0}
+    - target: {fileID: 5027679044452161494, guid: 5c5900b7c7b83804083b6b3302f370c4, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5027679044452161494, guid: 5c5900b7c7b83804083b6b3302f370c4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.071991
+      objectReference: {fileID: 0}
+    - target: {fileID: 5027679044452161494, guid: 5c5900b7c7b83804083b6b3302f370c4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.9972446
+      objectReference: {fileID: 0}
+    - target: {fileID: 5027679044452161494, guid: 5c5900b7c7b83804083b6b3302f370c4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5027679044452161494, guid: 5c5900b7c7b83804083b6b3302f370c4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5027679044452161494, guid: 5c5900b7c7b83804083b6b3302f370c4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5027679044452161494, guid: 5c5900b7c7b83804083b6b3302f370c4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5027679044452161494, guid: 5c5900b7c7b83804083b6b3302f370c4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5027679044452161494, guid: 5c5900b7c7b83804083b6b3302f370c4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5027679044452161494, guid: 5c5900b7c7b83804083b6b3302f370c4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5027679044452161494, guid: 5c5900b7c7b83804083b6b3302f370c4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5c5900b7c7b83804083b6b3302f370c4, type: 3}
 --- !u!1 &1090573998
 GameObject:
   m_ObjectHideFlags: 0
@@ -776,7 +837,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1090574002
 MonoBehaviour:
@@ -898,7 +959,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1452281726
 GameObject:
@@ -933,7 +994,7 @@ Transform:
   - {fileID: 345327861}
   - {fileID: 221523316}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1783922492
 GameObject:
